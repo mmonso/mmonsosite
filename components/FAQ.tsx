@@ -9,6 +9,7 @@ const Question = ({ title, answer }: { title: string; answer: string }) => {
       <button
         className="w-full py-6 md:py-8 flex items-center justify-between text-left focus:outline-none group"
         onClick={() => setIsOpen(!isOpen)}
+        aria-expanded={isOpen}
       >
         <span className={`font-serif text-xl md:text-2xl transition-colors ${isOpen ? 'text-sage-700' : 'text-stone-800 group-hover:text-sage-700'}`}>
           {title}
@@ -18,13 +19,52 @@ const Question = ({ title, answer }: { title: string; answer: string }) => {
         </span>
       </button>
       <div
-        className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-48 opacity-100 mb-8' : 'max-h-0 opacity-0'}`}
+        className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-96 opacity-100 mb-8' : 'max-h-0 opacity-0'}`}
       >
         <p className="text-stone-600 leading-relaxed text-lg font-light pr-8">{answer}</p>
       </div>
     </div>
   );
 };
+
+const FAQS = [
+  {
+    title: "Como agendar um horário?",
+    answer: "Basta clicar nos botões de contato deste site. Você será direcionado para o meu WhatsApp, onde poderemos verificar a disponibilidade de agenda que melhor se adapte à sua rotina.",
+  },
+  {
+    title: "Quanto custa a sessão e como funciona o pagamento?",
+    answer: "O valor da sessão é informado diretamente no primeiro contato, pois pode variar conforme a frequência e o contexto de cada pessoa. O pagamento é feito de forma prática, geralmente por Pix ou transferência bancária, antes ou no dia da sessão.",
+  },
+  {
+    title: "A terapia online funciona tão bem quanto a presencial?",
+    answer: "Sim. Diversas pesquisas confirmam que a psicoterapia online tem eficácia equivalente à presencial para a grande maioria das pessoas. O formato online oferece ainda vantagens práticas: você pode fazer sua sessão de qualquer lugar, sem deslocamento, com mais conforto e privacidade.",
+  },
+  {
+    title: "O que é a psicanálise e como ela se diferencia de outras abordagens?",
+    answer: "A psicanálise é uma abordagem que busca compreender as camadas mais profundas do psiquismo — os conteúdos inconscientes que influenciam nossos pensamentos, sentimentos e comportamentos. Diferente de outras abordagens mais focadas em técnicas e metas de curto prazo, a psicanálise propõe um espaço de fala livre e de escuta atenta, onde novos sentidos sobre si mesmo podem emergir ao longo do processo.",
+  },
+  {
+    title: "Quantas sessões são necessárias para ver resultados?",
+    answer: "Não há um número fixo. A terapia psicanalítica é um processo que respeita o tempo de cada pessoa. Algumas mudanças começam a se fazer sentir nas primeiras semanas; outras, mais profundas, surgem com o tempo. O que posso dizer é que a regularidade nas sessões é o principal fator para que o processo avance.",
+  },
+  {
+    title: "Com que frequência devo fazer terapia?",
+    answer: "O recomendado é ao menos uma sessão por semana. Essa frequência permite que o processo tenha continuidade e profundidade. Em alguns momentos, pode fazer sentido aumentar a frequência — isso é algo que decidimos juntos, conforme o andamento do seu processo.",
+  },
+  {
+    title: "Tenho dúvida se realmente preciso de terapia. Como saber?",
+    answer: "Se você está fazendo essa pergunta, provavelmente já há algo te incomodando — e isso por si só já é motivo suficiente para buscar um espaço de escuta. Não é preciso estar em crise para começar. Muitas pessoas buscam terapia por desejo de autoconhecimento, dificuldades nos relacionamentos, ansiedade, sensação de estar preso em padrões que se repetem, ou simplesmente pela vontade de viver de forma mais autêntica.",
+  },
+  {
+    title: "O que acontece na primeira sessão?",
+    answer: "A primeira sessão é um espaço de acolhimento e escuta. Você pode falar sobre o que te trouxe até aqui, sem nenhuma obrigação de contar tudo de uma vez. É também um momento para tirar dúvidas sobre o processo e perceber se a nossa conexão faz sentido para você. Não há um roteiro rígido — a conversa segue o seu ritmo.",
+  },
+  {
+    title: "As sessões são totalmente sigilosas?",
+    answer: "Sim. O sigilo é um princípio ético fundamental da psicologia e está previsto no Código de Ética Profissional. Tudo o que é dito nas sessões permanece absolutamente confidencial. As únicas exceções previstas em lei são situações de risco grave à vida, e mesmo nesses casos o psicólogo atua com responsabilidade e cuidado.",
+  },
+];
 
 export const FAQ: React.FC = () => {
   return (
@@ -36,10 +76,9 @@ export const FAQ: React.FC = () => {
         </div>
 
         <div className="divide-y divide-stone-100">
-          <Question
-            title="Como agendar um horário?"
-            answer="Basta clicar nos botões de contato deste site. Você será direcionado para o meu WhatsApp, onde poderemos verificar a disponibilidade de agenda que melhor se adapte à sua rotina."
-          />
+          {FAQS.map((faq) => (
+            <Question key={faq.title} title={faq.title} answer={faq.answer} />
+          ))}
         </div>
       </div>
     </section>

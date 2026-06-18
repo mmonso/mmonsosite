@@ -23,14 +23,16 @@ export const About: React.FC = () => {
 
              <div className="relative w-full max-w-sm aspect-[3/4] rounded-lg overflow-hidden shadow-xl shadow-stone-200">
                {/* Primary Image: marcelo-about.jpg. Fallback to Unsplash if missing. */}
-               <img 
+               <img
                  src="marcelo-about.jpg"
                  onError={(e) => {
                     e.currentTarget.src = "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop";
                     e.currentTarget.onerror = null;
-                 }} 
-                 alt="Marcelo Monsó" 
+                 }}
+                 alt="Marcelo Monsó"
                  className="object-cover w-full h-full"
+                 loading="lazy"
+                 decoding="async"
                />
                <div className="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur p-6 border-t border-stone-100">
                  <p className="font-serif text-xl text-stone-900 font-medium">{CONTENT.name}</p>

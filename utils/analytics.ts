@@ -17,6 +17,5 @@ export const trackWhatsAppClick = () => {
       value: 1
     });
     
-    console.log('[Analytics] WhatsApp click tracked');
   }
 };

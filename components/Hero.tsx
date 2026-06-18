@@ -54,10 +54,12 @@ export const Hero: React.FC = () => {
                 src="marcelo-hero.jpg"
                 onError={(e) => {
                   e.currentTarget.src = "https://images.unsplash.com/photo-1537368910025-6000181c363c?q=80&w=800&auto=format&fit=crop";
-                  e.currentTarget.onerror = null; // prevents looping
+                  e.currentTarget.onerror = null;
                 }}
                 alt="Marcelo Monsó sorrindo - Psicólogo Online"
                 className="object-cover w-full h-full scale-105 group-hover:scale-100 transition-transform duration-[2s] ease-out"
+                fetchPriority="high"
+                decoding="sync"
               />
 
               {/* Gradient overlay for text readability */}
