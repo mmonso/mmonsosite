@@ -9,6 +9,7 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 mb-20">
 
+          {/* Coluna 1: Identidade */}
           <div className="flex flex-col items-start space-y-6">
             <div>
               <h3 className="font-serif text-3xl text-stone-900 tracking-tight mb-2">{CONTENT.name}</h3>
@@ -27,6 +28,7 @@ export const Footer: React.FC = () => {
             </p>
           </div>
 
+          {/* Coluna 2: Contato */}
           <div className="flex flex-col justify-center">
             <div className="bg-sage-50/50 rounded-2xl p-8 border border-sage-100/50 w-full">
               <h4 className="font-serif text-xl text-stone-900 mb-6">Vamos conversar?</h4>
@@ -47,12 +49,14 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
+        {/* Copyright Bar */}
         <div className="border-t border-stone-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-stone-400 font-light text-center md:text-left">
             &copy; {new Date().getFullYear()} Marcelo Monsó. Todos os direitos reservados.
           </p>
-          <div className="flex gap-6">
+          <div className="flex gap-6 items-center">
             <span className="text-sm text-stone-400 font-light">Psicologia com Ética</span>
+            <a href="/privacidade" className="text-sm text-stone-400 font-light hover:text-sage-600 transition-colors">Política de Privacidade</a>
           </div>
         </div>
       </div>
