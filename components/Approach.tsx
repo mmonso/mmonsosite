@@ -14,12 +14,12 @@ const FeatureCard: React.FC<{ icon: React.ReactNode; title: string; description:
 
 export const Approach: React.FC = () => {
   return (
-    <section id="psicanalise" className="py-24 md:py-32 bg-stone-50 relative">
+    <section id="abordagem" className="py-24 md:py-32 bg-stone-50 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <div className="text-center max-w-3xl mx-auto mb-20">
           <h2 className="font-serif text-4xl md:text-5xl text-stone-900 mb-6 tracking-tight">
-            A Abordagem Psicanalítica
+            A Abordagem
           </h2>
           <div className="w-24 h-1 bg-sage-400 mx-auto rounded-full mb-8"></div>
           <div className="text-xl text-stone-700 leading-relaxed font-light space-y-6">
@@ -30,23 +30,23 @@ export const Approach: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          <FeatureCard 
+          <FeatureCard
             icon={<Ear size={32} strokeWidth={1.5} />}
-            title="Escuta Profunda"
-            description="Um espaço para investigar os sentidos inconscientes que permeiam seus pensamentos, sem pressa."
+            title="Presença no Agora"
+            description="Na Gestalt, trabalhamos o que está acontecendo agora — como você sente, como reage, o que se repete nos seus vínculos."
           />
-          <FeatureCard 
+          <FeatureCard
             icon={<Brain size={32} strokeWidth={1.5} />}
-            title="Autoconhecimento"
-            description="Compreender as camadas mais profundas do psiquismo e suas dinâmicas internas."
+            title="Consciência dos Padrões"
+            description="Ampliar sua percepção sobre as dinâmicas que moldam seus relacionamentos e sua forma de se comunicar."
           />
-          <FeatureCard 
+          <FeatureCard
             icon={<Heart size={32} strokeWidth={1.5} />}
-            title="Singularidade"
-            description="Um processo que respeita seu tempo e não busca adaptar você a padrões externos."
+            title="Escolhas Mais Livres"
+            description="Um processo que não busca te encaixar em um modelo ideal, mas fortalecer sua capacidade de viver de forma autêntica."
           />
         </div>
-        
+
         <div className="mt-16 text-center max-w-3xl mx-auto">
            <p className="text-lg text-stone-600 italic font-serif">
              "{CONTENT.approachText[3]}"

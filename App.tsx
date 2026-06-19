@@ -3,6 +3,7 @@ import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { Approach } from './components/Approach';
+import { ForWho } from './components/ForWho';
 import { Services } from './components/Services';
 import { FAQ } from './components/FAQ';
 import { Footer } from './components/Footer';
@@ -10,7 +11,6 @@ import { WhatsAppButton } from './components/WhatsAppButton';
 
 function App() {
   
-  // Simple hook to smooth scroll for anchor links
   useEffect(() => {
     const handleAnchorClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
@@ -39,6 +39,7 @@ function App() {
         <Hero />
         <About />
         <Approach />
+        <ForWho />
         <Services />
         <FAQ />
       </main>
