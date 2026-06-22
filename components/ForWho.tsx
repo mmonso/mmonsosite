@@ -64,8 +64,8 @@ export const ForWho: React.FC = () => {
           />
         </div>
 
-        <div className="bg-sage-50 border border-sage-100 rounded-2xl p-8 md:p-12 text-center max-w-3xl mx-auto">
-          <p className="font-serif text-2xl md:text-3xl text-sage-900 italic leading-relaxed mb-8">
+        <div className="rounded-2xl p-8 md:p-12 text-center max-w-3xl mx-auto" style={{ backgroundColor: '#2a3d35' }}>
+          <p className="font-serif text-2xl md:text-3xl text-white italic leading-relaxed mb-8">
             "Aqui você não precisa justificar quem você é ou como você se relaciona."
           </p>
           <Button as="a" href={WHATSAPP_LINK} target="_blank" variant="primary" className="px-8 py-4 text-lg" trackWhatsApp>
