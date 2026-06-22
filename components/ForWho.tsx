@@ -4,8 +4,8 @@ import { WHATSAPP_LINK } from '../constants';
 import { Button } from './Button';
 
 const Card: React.FC<{ icon: React.ReactNode; title: string; description: string }> = ({ icon, title, description }) => (
-  <div className="flex gap-5 p-6 rounded-2xl bg-white border border-stone-100 hover:border-sage-200 hover:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] transition-all duration-300">
-    <div className="flex-shrink-0 w-12 h-12 bg-sage-50 rounded-xl flex items-center justify-center text-sage-600">
+  <div className="flex gap-5 p-6 rounded-2xl bg-stone-50 border border-stone-200 hover:border-sage-300 hover:bg-white hover:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] transition-all duration-300">
+    <div className="flex-shrink-0 w-12 h-12 bg-white border border-stone-200 rounded-xl flex items-center justify-center text-sage-600 shrink-0">
       {icon}
     </div>
     <div>
@@ -26,7 +26,7 @@ export const ForWho: React.FC = () => {
             Para quem é essa terapia?
           </h2>
           <div className="w-20 h-1 bg-sage-300 mx-auto rounded-full mb-8"></div>
-          <p className="text-lg text-stone-600 font-light leading-relaxed">
+          <p className="text-lg text-stone-700 font-light leading-relaxed">
             Se você se identifica com alguma dessas situações, este pode ser o espaço que você estava procurando.
           </p>
         </div>

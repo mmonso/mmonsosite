@@ -3,7 +3,6 @@ import { CONTENT } from '../constants';
 import { Quote } from 'lucide-react';
 
 export const About: React.FC = () => {
-  // Extracting parts of text for better layout
   const mainText = CONTENT.aboutText.slice(0, 1);
   const quoteText = CONTENT.aboutText[1];
   const secondaryText = CONTENT.aboutText.slice(2);
@@ -14,7 +13,6 @@ export const About: React.FC = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
            
-           {/* Left Column: Title and Image */}
            <div className="lg:col-span-5 flex flex-col items-center lg:items-start space-y-8 sticky top-24">
              <div>
                 <h2 className="font-serif text-4xl md:text-5xl text-stone-900 mb-4 tracking-tight">Sobre Mim</h2>
@@ -22,7 +20,6 @@ export const About: React.FC = () => {
              </div>
 
              <div className="relative w-full max-w-sm aspect-[3/4] rounded-lg overflow-hidden shadow-xl shadow-stone-200">
-               {/* Primary Image: marcelo-about.jpg. Fallback to Unsplash if missing. */}
                <img
                  src="marcelo-about.jpg"
                  onError={(e) => {
@@ -41,7 +38,6 @@ export const About: React.FC = () => {
              </div>
            </div>
 
-           {/* Right Column: Content */}
            <div className="lg:col-span-7 space-y-8 lg:pt-8">
              <div className="prose prose-stone prose-lg text-stone-700 leading-relaxed">
                {mainText.map((t, i) => <p key={i}>{t}</p>)}
@@ -55,16 +51,16 @@ export const About: React.FC = () => {
              </div>
 
              <div className="space-y-6 text-lg text-stone-700 leading-relaxed font-light">
-               {secondaryText.map((paragraph, index) => (
-                 <p key={index}>
-                   {paragraph}
-                 </p>
+               {secondaryText.slice(0, 2).map((paragraph, index) => (
+                 <p key={index}>{paragraph}</p>
                ))}
              </div>
 
-             <div className="pt-4">
-                <p className="font-medium text-stone-900">Formação</p>
-                <p className="text-stone-600">Psicólogo Clínico formado pela Universidade Federal de Santa Catarina (UFSC).</p>
+             <div className="pt-4 flex flex-wrap gap-3">
+               <span className="inline-flex items-center px-4 py-2 bg-stone-50 border border-stone-200 rounded-full text-sm text-stone-600 font-medium">Gestalt-terapia</span>
+               <span className="inline-flex items-center px-4 py-2 bg-stone-50 border border-stone-200 rounded-full text-sm text-stone-600 font-medium">UFSC</span>
+               <span className="inline-flex items-center px-4 py-2 bg-stone-50 border border-stone-200 rounded-full text-sm text-stone-600 font-medium">CRP 12/27931</span>
+               <span className="inline-flex items-center px-4 py-2 bg-stone-50 border border-stone-200 rounded-full text-sm text-stone-600 font-medium">Atendimento Online</span>
              </div>
            </div>
 
