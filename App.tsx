@@ -6,6 +6,7 @@ import { ForWho } from './components/ForWho';
 import { Services } from './components/Services';
 import { Testimonials } from './components/Testimonials';
 import { FAQ } from './components/FAQ';
+import { CTAFinal } from './components/CTAFinal';
 import { Footer } from './components/Footer';
 import { WhatsAppButton } from './components/WhatsAppButton';
 import { PrivacyPolicy } from './components/PrivacyPolicy';
@@ -52,6 +53,7 @@ function App() {
         <Testimonials />
         <About />
         <FAQ />
+        <CTAFinal />
       </main>
       <Footer />
       <WhatsAppButton />
