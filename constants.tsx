@@ -6,17 +6,17 @@ export const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Ol%C3%A1%2C%
 
 export const NAV_LINKS = [
   { label: 'Início', href: '#home' },
-  { label: 'Sobre Mim', href: '#sobre' },
-  { label: 'Abordagem', href: '#abordagem' },
   { label: 'Para Quem', href: '#para-quem' },
+  { label: 'Sobre Mim', href: '#sobre' },
   { label: 'Atendimento', href: '#atendimento' },
+  { label: 'Dúvidas', href: '#faq' },
 ];
 
 export const CONTENT = {
   name: "Marcelo Monsó",
   title: "Psicólogo Clínico",
   crp: "CRP 12/27931",
-  heroTitle: "Seus relacionamentos merecem um espaço sem julgamento",
+  heroTitle: "Cansado de repetir os mesmos padrões nos seus relacionamentos?",
   heroQuote: "Meu interesse por vínculos, comunicação e formas diversas de se relacionar vem tanto da clínica quanto da vida.",
   heroSubtitle: "Psicoterapia online especializada em relacionamentos e comunicação. Atendimento para quem vive padrões que se repetem, dificuldades de vínculo ou formas de se relacionar que fogem ao convencional.",
   aboutText: [

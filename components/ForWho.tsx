@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageCircle, RefreshCw, Shield, Users, Heart, Compass } from 'lucide-react';
+import { CheckCircle, MessageCircle, RefreshCw, Shield, Users, Heart, Compass } from 'lucide-react';
 import { WHATSAPP_LINK } from '../constants';
 import { Button } from './Button';
 
@@ -23,29 +23,24 @@ export const ForWho: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="font-serif text-4xl md:text-5xl text-stone-900 mb-6 tracking-tight">
-            Para quem é essa terapia?
+            Você se identifica com alguma dessas situações?
           </h2>
           <div className="w-20 h-1 bg-sage-300 mx-auto rounded-full mb-8"></div>
           <p className="text-lg text-stone-700 font-light leading-relaxed">
-            Se você se identifica com alguma dessas situações, este pode ser o espaço que você estava procurando.
+            Se sim, este pode ser exatamente o espaço que você estava procurando.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-14">
-          <Card
-            icon={<MessageCircle size={24} strokeWidth={1.5} />}
-            title="Dificuldades de comunicação"
-            description="Você sente que não consegue expressar o que precisa, que suas palavras não chegam ao outro, ou que os conflitos nunca se resolvem de verdade."
-          />
           <Card
             icon={<RefreshCw size={24} strokeWidth={1.5} />}
             title="Padrões que se repetem"
             description="Você percebe que vive as mesmas situações em relacionamentos diferentes — ciúme, distância, dependência — e não sabe como sair."
           />
           <Card
-            icon={<Users size={24} strokeWidth={1.5} />}
-            title="Relacionamentos não convencionais"
-            description="Você vive ou quer viver uma relação não monogâmica e busca um profissional que acolha esse modo de vida sem julgamento."
+            icon={<MessageCircle size={24} strokeWidth={1.5} />}
+            title="Dificuldades de comunicação"
+            description="Você sente que não consegue expressar o que precisa, que suas palavras não chegam ao outro, ou que os conflitos nunca se resolvem de verdade."
           />
           <Card
             icon={<Heart size={24} strokeWidth={1.5} />}
@@ -56,6 +51,11 @@ export const ForWho: React.FC = () => {
             icon={<Shield size={24} strokeWidth={1.5} />}
             title="Dinâmicas relacionais desgastantes"
             description="Você sente que se perde dentro das suas relações, que coloca o outro antes de você mesmo, ou que os relacionamentos te esgotam mais do que te nutrem."
+          />
+          <Card
+            icon={<Users size={24} strokeWidth={1.5} />}
+            title="Relacionamentos não convencionais"
+            description="Você vive ou quer viver uma relação não monogâmica e busca um profissional que acolha esse modo de vida sem julgamento."
           />
           <Card
             icon={<Compass size={24} strokeWidth={1.5} />}

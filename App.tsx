@@ -1,28 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
-import { Approach } from './components/Approach';
 import { ForWho } from './components/ForWho';
 import { Services } from './components/Services';
+import { Testimonials } from './components/Testimonials';
 import { FAQ } from './components/FAQ';
 import { Footer } from './components/Footer';
 import { WhatsAppButton } from './components/WhatsAppButton';
 import { PrivacyPolicy } from './components/PrivacyPolicy';
-import { LandingPage } from './components/LandingPage';
 
 function App() {
   const path = window.location.pathname;
 
   if (path === '/privacidade') return <PrivacyPolicy />;
-  if (path === '/consulta') return <LandingPage />;
 
-  // Simple hook to smooth scroll for anchor links
+  // Redireciona /consulta para a home
+  if (path === '/consulta') {
+    window.location.replace('/');
+    return null;
+  }
+
   useEffect(() => {
     const handleAnchorClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       const link = target.closest('a');
-      
+
       if (link && link.hash && link.hash.startsWith('#') && link.origin === window.location.origin) {
         e.preventDefault();
         const element = document.querySelector(link.hash);
@@ -44,10 +47,10 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <About />
-        <Approach />
         <ForWho />
         <Services />
+        <Testimonials />
+        <About />
         <FAQ />
       </main>
       <Footer />

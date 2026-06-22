@@ -1,7 +1,6 @@
 import React from 'react';
 import { Clock, Video, ShieldCheck } from 'lucide-react';
 import { CONTENT, WHATSAPP_LINK } from '../constants';
-import { Button } from './Button';
 
 export const Services: React.FC = () => {
   return (
@@ -11,13 +10,36 @@ export const Services: React.FC = () => {
       <div className="absolute bottom-0 left-0 -ml-40 -mb-40 w-[20rem] h-[20rem] rounded-full blur-3xl opacity-10 pointer-events-none" style={{ backgroundColor: '#96b0a4' }}></div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-20">
-          <h2 className="font-serif text-4xl md:text-5xl mb-6 tracking-tight text-white">Como funciona o atendimento?</h2>
+
+        {/* Como funciona */}
+        <div className="text-center mb-16">
+          <h2 className="font-serif text-4xl md:text-5xl mb-6 tracking-tight text-white">Como funciona?</h2>
           <div className="w-20 h-1 bg-sage-400 mx-auto rounded-full mb-8"></div>
-          <p className="text-stone-300 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed font-light">
-            A terapia online oferece a mesma profundidade e acolhimento do presencial,
-            com a flexibilidade de estar onde você se sente mais confortável.
+          <p className="text-stone-300 max-w-xl mx-auto text-lg font-light">
+            Três passos simples para começar.
           </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+          {[
+            { step: "1", title: "Entre em contato", desc: "Mande mensagem pelo WhatsApp para verificar os horários disponíveis. Resposta rápida." },
+            { step: "2", title: "Primeira sessão", desc: "50 minutos online para você falar sobre o que te trouxe, no seu ritmo, sem pressa nem roteiro rígido." },
+            { step: "3", title: "Seu processo", desc: "Sessões semanais para aprofundar o autoconhecimento e transformar seus padrões relacionais." },
+          ].map(({ step, title, desc }) => (
+            <div key={step} className="group p-8 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-sm text-center">
+              <div className="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors">
+                <span className="font-serif text-2xl text-white">{step}</span>
+              </div>
+              <h3 className="text-xl font-serif mb-3 text-white">{title}</h3>
+              <p className="text-stone-300 leading-relaxed font-light">{desc}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Detalhes do atendimento */}
+        <div className="text-center mb-12">
+          <h3 className="font-serif text-3xl md:text-4xl mb-6 text-white">Detalhes do atendimento</h3>
+          <div className="w-16 h-1 bg-sage-400 mx-auto rounded-full"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
@@ -25,9 +47,9 @@ export const Services: React.FC = () => {
             <div className="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center text-sage-300 mb-6 group-hover:bg-white/20 group-hover:text-white transition-colors">
               <Clock size={28} strokeWidth={1.5} />
             </div>
-            <h3 className="text-2xl font-serif mb-3 text-white">Duração</h3>
+            <h3 className="text-2xl font-serif mb-3 text-white">Duração e valor</h3>
             <p className="text-stone-300 text-lg leading-relaxed font-light">
-              As sessões têm duração aproximada de <span className="text-white font-medium">{CONTENT.sessionInfo.duration}</span>, um tempo dedicado exclusivamente a você.
+              Sessões de <span className="text-white font-medium">{CONTENT.sessionInfo.duration}</span>, com investimento de <span className="text-white font-medium">R$ 160</span> por sessão.
             </p>
           </div>
 
@@ -37,7 +59,7 @@ export const Services: React.FC = () => {
             </div>
             <h3 className="text-2xl font-serif mb-3 text-white">Formato</h3>
             <p className="text-stone-300 text-lg leading-relaxed font-light">
-              Realizado através de videochamada ({CONTENT.sessionInfo.platform}), garantindo contato visual.
+              100% online via videochamada ({CONTENT.sessionInfo.platform}). Seg–Sex, das 8h às 20h.
             </p>
           </div>
 
@@ -61,6 +83,7 @@ export const Services: React.FC = () => {
           >
             Agendar Primeira Sessão
           </a>
+          <p className="text-sage-400 text-sm mt-4">As vagas são limitadas — atendo um número reduzido de pacientes por semana.</p>
         </div>
       </div>
     </section>
