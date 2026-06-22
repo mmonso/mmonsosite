@@ -16,25 +16,27 @@ const testimonials = [
 
 export const Testimonials: React.FC = () => {
   return (
-    <section className="py-24 bg-sage-50/40">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#2a3d35' }}>
+      <div className="absolute top-0 right-0 -mr-40 -mt-40 w-[30rem] h-[30rem] rounded-full blur-3xl opacity-20 pointer-events-none" style={{ backgroundColor: '#529e82' }}></div>
+
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-14">
-          <h2 className="font-serif text-4xl text-stone-900 mb-4 tracking-tight">O que dizem os pacientes</h2>
-          <div className="w-12 h-1 bg-sage-300 mx-auto rounded-full"></div>
+          <h2 className="font-serif text-4xl text-white mb-4 tracking-tight">O que dizem os pacientes</h2>
+          <div className="w-12 h-1 bg-sage-400 mx-auto rounded-full"></div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
           {testimonials.map((t, i) => (
-            <div key={i} className="bg-white rounded-2xl p-8 border border-stone-100 shadow-sm">
+            <div key={i} className="bg-white/10 rounded-2xl p-8 border border-white/10">
               <div className="flex mb-5">
                 {[1,2,3,4,5].map(j => (
                   <Star key={j} size={16} className="text-amber-400 fill-amber-400" />
                 ))}
               </div>
-              <p className="text-stone-700 font-light leading-relaxed italic mb-6">"{t.text}"</p>
+              <p className="text-stone-200 font-light leading-relaxed italic mb-6">"{t.text}"</p>
               <div>
-                <span className="text-stone-500 text-sm font-medium">— {t.author}</span>
-                <span className="text-stone-300 text-sm"> · {t.detail}</span>
+                <span className="text-stone-300 text-sm font-medium">— {t.author}</span>
+                <span className="text-stone-500 text-sm"> · {t.detail}</span>
               </div>
             </div>
           ))}

@@ -7,8 +7,8 @@ export const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Ol%C3%A1%2C%
 export const NAV_LINKS = [
   { label: 'Início', href: '#home' },
   { label: 'Para Quem', href: '#para-quem' },
-  { label: 'Sobre Mim', href: '#sobre' },
   { label: 'Atendimento', href: '#atendimento' },
+  { label: 'Sobre Mim', href: '#sobre' },
   { label: 'Dúvidas', href: '#faq' },
 ];
 
