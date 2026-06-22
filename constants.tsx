@@ -2,7 +2,7 @@ import React from 'react';
 import { MessageCircle, Mail, Instagram, Linkedin } from 'lucide-react';
 
 export const WHATSAPP_NUMBER = "5548991234181";
-export const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Ol%C3%A1,%20Marcelo.%20Gostaria%20de%20saber%20mais%20sobre%20a%20terapia%20online.`;
+export const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Ol%C3%A1%2C%20Marcelo!%20Vi%20seu%20site%20e%20gostaria%20de%20saber%20sobre%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20uma%20primeira%20sess%C3%A3o.`;
 
 export const NAV_LINKS = [
   { label: 'Início', href: '#home' },

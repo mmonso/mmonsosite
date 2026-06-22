@@ -23,7 +23,7 @@ export const Hero: React.FC = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-stone-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
-              Psicoterapia online para quem vive padrões que se repetem, dificuldades de vínculo ou formas de se relacionar que fogem ao convencional.
+              Psicoterapia online especializada em relacionamentos e comunicação. Para quem repete os mesmos padrões, sente dificuldade de vínculo ou busca um espaço sem julgamento para existir do seu jeito.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
