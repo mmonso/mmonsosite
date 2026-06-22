@@ -17,11 +17,11 @@ export const CONTENT = {
   title: "Psicólogo Clínico",
   crp: "CRP 12/27931",
   heroTitle: "Seus relacionamentos merecem um espaço sem julgamento",
-  heroQuote: "Não existe uma forma certa de se relacionar ou de existir. Existe a sua.",
+  heroQuote: "Meu interesse por vínculos, comunicação e formas diversas de se relacionar vem tanto da clínica quanto da vida.",
   heroSubtitle: "Psicoterapia online especializada em relacionamentos e comunicação. Atendimento para quem vive padrões que se repetem, dificuldades de vínculo ou formas de se relacionar que fogem ao convencional.",
   aboutText: [
     "Olá! Sou Marcelo Monsó, Psicólogo Clínico formado pela UFSC.",
-    "Meu interesse por vínculos, comunicação e formas diversas de se relacionar vem tanto da clínica quanto da vida. Sou pai de três filhas — e essa experiência me ensinou muito sobre afeto, presença e os desafios reais de construir relações autênticas.",
+    "Não existe uma forma certa de se relacionar ou de existir. Existe a sua.",
     "Acredito em uma terapia que ofeça um espaço seguro para que você possa existir com liberdade, sem precisar se encaixar em padrões ou justificar quem você é.",
     "Meu compromisso é acolher e validar modos de vida que muitas vezes não encontram espaço ou reconhecimento na sociedade, respeitando profundamente a singularidade e diversidade de cada experiência humana.",
     "Na clínica, busco junto com você compreender as dinâmicas que influenciam suas relações e emoções, ampliando sua percepção sobre si mesmo e fortalecendo caminhos mais autênticos e saudáveis.",
