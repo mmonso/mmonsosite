@@ -1,32 +1,32 @@
 import React from 'react';
-import { CheckCircle, MessageCircle, RefreshCw, Shield, Users, Heart, Compass } from 'lucide-react';
+import { MessageCircle, RefreshCw, Shield, Users, Heart, Compass } from 'lucide-react';
 import { WHATSAPP_LINK } from '../constants';
 import { Button } from './Button';
 
 const Card: React.FC<{ icon: React.ReactNode; title: string; description: string }> = ({ icon, title, description }) => (
-  <div className="flex gap-5 p-6 rounded-2xl bg-stone-50 border border-stone-200 hover:border-sage-300 hover:bg-white hover:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] transition-all duration-300">
-    <div className="flex-shrink-0 w-12 h-12 bg-white border border-stone-200 rounded-xl flex items-center justify-center text-sage-600 shrink-0">
+  <div className="flex gap-5 p-6 rounded-2xl bg-white/10 border border-white/10 hover:bg-white/15 hover:border-white/20 transition-all duration-300">
+    <div className="flex-shrink-0 w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-sage-300 shrink-0">
       {icon}
     </div>
     <div>
-      <h3 className="font-serif text-xl text-stone-900 mb-2">{title}</h3>
-      <p className="text-stone-600 leading-relaxed font-light">{description}</p>
+      <h3 className="font-serif text-xl text-white mb-2">{title}</h3>
+      <p className="text-stone-300 leading-relaxed font-light">{description}</p>
     </div>
   </div>
 );
 
 export const ForWho: React.FC = () => {
   return (
-    <section id="para-quem" className="py-24 md:py-32 bg-white relative overflow-hidden">
-      <div className="absolute top-0 right-0 -mr-40 -mt-40 w-[30rem] h-[30rem] bg-sage-50 rounded-full blur-3xl opacity-70 pointer-events-none"></div>
+    <section id="para-quem" className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: '#2a3d35' }}>
+      <div className="absolute top-0 right-0 -mr-40 -mt-40 w-[30rem] h-[30rem] rounded-full blur-3xl opacity-20 pointer-events-none" style={{ backgroundColor: '#529e82' }}></div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl text-stone-900 mb-6 tracking-tight">
+          <h2 className="font-serif text-4xl md:text-5xl text-white mb-6 tracking-tight">
             Você se identifica com alguma dessas situações?
           </h2>
-          <div className="w-20 h-1 bg-sage-300 mx-auto rounded-full mb-8"></div>
-          <p className="text-lg text-stone-700 font-light leading-relaxed">
+          <div className="w-20 h-1 bg-sage-400 mx-auto rounded-full mb-8"></div>
+          <p className="text-lg text-stone-300 font-light leading-relaxed">
             Se sim, este pode ser exatamente o espaço que você estava procurando.
           </p>
         </div>
@@ -64,7 +64,7 @@ export const ForWho: React.FC = () => {
           />
         </div>
 
-        <div className="rounded-2xl p-8 md:p-12 text-center max-w-3xl mx-auto" style={{ backgroundColor: '#2a3d35' }}>
+        <div className="rounded-2xl p-8 md:p-12 text-center max-w-3xl mx-auto bg-white/10 border border-white/10">
           <p className="font-serif text-2xl md:text-3xl text-white italic leading-relaxed mb-8">
             "Aqui você não precisa justificar quem você é ou como você se relaciona."
           </p>
