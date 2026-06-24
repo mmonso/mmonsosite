@@ -18,7 +18,7 @@ export const About: React.FC = () => {
 
             <div className="relative w-full max-w-xs sm:max-w-sm aspect-[3/4] rounded-lg overflow-hidden shadow-xl shadow-stone-200">
               <img
-                src="marcelo-about.JPG"
+                src="marcelo-about.jpg"
                 onError={(e) => {
                   e.currentTarget.src = "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop";
                   e.currentTarget.onerror = null;
