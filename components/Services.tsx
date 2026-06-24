@@ -59,7 +59,7 @@ export const Services: React.FC = () => {
             </div>
             <h3 className="text-2xl font-serif mb-3 text-stone-900">Formato</h3>
             <p className="text-stone-600 text-lg leading-relaxed font-light">
-              100% online via videochamada ({CONTENT.sessionInfo.platform}). Seg–Sex, das 8h às 20h.
+              100% online via videochamada ({CONTENT.sessionInfo.platform}). Seg–Sex, das 9h às 17h.
             </p>
           </div>
 
