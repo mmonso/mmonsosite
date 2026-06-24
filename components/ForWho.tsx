@@ -17,12 +17,12 @@ const Card: React.FC<{ icon: React.ReactNode; title: string; description: string
 
 export const ForWho: React.FC = () => {
   return (
-    <section id="para-quem" className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: '#2a3d35' }}>
+    <section id="para-quem" className="py-16 md:py-24 lg:py-32 relative overflow-hidden" style={{ backgroundColor: '#2a3d35' }}>
       <div className="absolute top-0 right-0 -mr-40 -mt-40 w-[30rem] h-[30rem] rounded-full blur-3xl opacity-20 pointer-events-none" style={{ backgroundColor: '#529e82' }}></div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl text-white mb-6 tracking-tight">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white mb-6 tracking-tight">
             Você se identifica com alguma dessas situações?
           </h2>
           <div className="w-20 h-1 bg-sage-400 mx-auto rounded-full mb-8"></div>

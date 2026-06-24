@@ -4,7 +4,7 @@ import { CONTENT, WHATSAPP_LINK } from '../constants';
 
 export const Services: React.FC = () => {
   return (
-    <section id="atendimento" className="py-24 md:py-32 relative overflow-hidden bg-sage-100">
+    <section id="atendimento" className="py-16 md:py-24 lg:py-32 relative overflow-hidden bg-sage-100">
 
       <div className="absolute top-0 left-0 -ml-40 -mt-40 w-[30rem] h-[30rem] bg-sage-200/60 rounded-full blur-3xl opacity-70 pointer-events-none"></div>
       <div className="absolute bottom-0 right-0 -mr-40 -mb-40 w-[20rem] h-[20rem] bg-sage-200/60 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
@@ -13,7 +13,7 @@ export const Services: React.FC = () => {
 
         {/* Como funciona */}
         <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl mb-6 tracking-tight text-stone-900">Como funciona?</h2>
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mb-6 tracking-tight text-stone-900">Como funciona?</h2>
           <div className="w-20 h-1 bg-sage-400 mx-auto rounded-full mb-8"></div>
           <p className="text-stone-600 max-w-xl mx-auto text-lg font-light">
             Três passos simples para começar.
@@ -38,7 +38,7 @@ export const Services: React.FC = () => {
 
         {/* Detalhes do atendimento */}
         <div className="text-center mb-12">
-          <h3 className="font-serif text-3xl md:text-4xl mb-6 text-stone-900">Detalhes do atendimento</h3>
+          <h3 className="font-serif text-2xl md:text-3xl lg:text-4xl mb-6 text-stone-900">Detalhes do atendimento</h3>
           <div className="w-16 h-1 bg-sage-400 mx-auto rounded-full"></div>
         </div>
 

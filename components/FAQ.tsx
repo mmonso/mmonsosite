@@ -68,10 +68,10 @@ const FAQS = [
 
 export const FAQ: React.FC = () => {
   return (
-    <section id="faq" className="py-24 bg-sage-100">
+    <section id="faq" className="py-16 md:py-24 bg-sage-100">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl text-stone-900 mb-4 tracking-tight">Dúvidas Frequentes</h2>
+          <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-4 tracking-tight">Dúvidas Frequentes</h2>
           <div className="w-12 h-1 bg-sage-300 mx-auto rounded-full"></div>
         </div>
 
