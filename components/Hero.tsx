@@ -25,7 +25,7 @@ export const Hero: React.FC = () => {
               </h1>
 
               <p className="text-base md:text-lg lg:text-xl text-stone-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
-                Psicoterapia para quem quer entender suas relações. Sem julgamento sobre como você vive ou quem você ama.
+                Psicoterapia para entender de onde vêm esses padrões e como mudá-los. Sem julgamento sobre como você vive ou quem você ama.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start pt-2">
