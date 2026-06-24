@@ -32,7 +32,7 @@ export const CTAFinal: React.FC = () => {
           <ArrowRight size={20} />
         </a>
 
-        <p className="text-stone-500 text-sm mt-6">Sessões de 50 min · R$ 160 · Seg–Sex, 8h–20h · CRP 12/27931</p>
+        <p className="text-stone-500 text-sm mt-6">Sessões de 50 min · Seg–Sex, 8h–20h · CRP 12/27931</p>
       </div>
     </section>
   );

@@ -78,7 +78,7 @@ export const Hero: React.FC = () => {
           <div className="flex items-center gap-2"><Shield size={15} className="text-sage-500" /> Sigilo absoluto garantido</div>
           <div className="flex items-center gap-2"><Clock size={15} className="text-sage-500" /> Sessões de 50 minutos</div>
           <div className="flex items-center gap-2"><Video size={15} className="text-sage-500" /> 100% online, de onde você estiver</div>
-          <div className="flex items-center gap-2"><CheckCircle size={15} className="text-sage-500" /> R$ 160 por sessão</div>
+          <div className="flex items-center gap-2"><CheckCircle size={15} className="text-sage-500" /> Valor informado pelo WhatsApp</div>
         </div>
       </div>
     </>
