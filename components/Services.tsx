@@ -49,7 +49,7 @@ export const Services: React.FC = () => {
             </div>
             <h3 className="text-2xl font-serif mb-3 text-stone-900">Duração e valor</h3>
             <p className="text-stone-600 text-lg leading-relaxed font-light">
-              Sessões de <span className="text-stone-900 font-medium">{CONTENT.sessionInfo.duration}</span>. O valor é informado pelo WhatsApp.
+              Sessões de <span className="text-stone-900 font-medium">{CONTENT.sessionInfo.duration}</span>, com foco total em você.
             </p>
           </div>
 

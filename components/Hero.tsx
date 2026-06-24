@@ -79,7 +79,6 @@ export const Hero: React.FC = () => {
           <div className="flex items-center gap-1.5"><Shield size={14} className="text-sage-500 shrink-0" /> Sigilo absoluto garantido</div>
           <div className="flex items-center gap-1.5"><Clock size={14} className="text-sage-500 shrink-0" /> Sessões de 50 minutos</div>
           <div className="flex items-center gap-1.5"><Video size={14} className="text-sage-500 shrink-0" /> 100% online</div>
-          <div className="flex items-center gap-1.5"><CheckCircle size={14} className="text-sage-500 shrink-0" /> Valor informado pelo WhatsApp</div>
         </div>
       </div>
     </>

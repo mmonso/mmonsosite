@@ -34,7 +34,7 @@ const FAQS = [
   },
   {
     title: "Qual é o investimento por sessão?",
-    answer: "Para saber sobre investimento e disponibilidade de horários, basta entrar em contato pelo WhatsApp.",
+    answer: "Para saber sobre disponibilidade de horários e dar o primeiro passo, basta entrar em contato pelo WhatsApp.",
   },
   {
     title: "Tenho dúvida se realmente preciso de terapia. Como saber?",
