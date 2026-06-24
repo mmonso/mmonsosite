@@ -3,14 +3,14 @@ import { Star } from 'lucide-react';
 
 const testimonials = [
   {
-    text: "Nunca tinha conseguido falar sobre certas coisas sem me sentir julgada. Com o Marcelo foi diferente desde a primeira sessão. Hoje consigo perceber coisas em mim que antes eu simplesmente não via.",
+    text: "Nunca tinha conseguido falar sobre certas coisas sem me sentir julgada. Com o Marcelo foi diferente desde a primeira sessão. Hoje me entendo melhor e consigo agir diferente em situações que antes me travavam.",
     name: "Ana L.",
     detail: "São Paulo, SP",
     initials: "AL",
     color: "bg-sage-700",
   },
   {
-    text: "Eu sabia que tinha alguma coisa se repetindo nos meus relacionamentos, mas não conseguia ver o quê. As sessões foram abrindo isso aos poucos. Mudou bastante a forma como eu me relaciono com as pessoas.",
+    text: "Eu sabia que tinha alguma coisa se repetindo nos meus relacionamentos, mas não conseguia ver o quê. As sessões foram abrindo isso aos poucos. Hoje tenho mais clareza sobre o que acontece comigo.",
     name: "Rafael M.",
     detail: "Curitiba, PR",
     initials: "RM",
