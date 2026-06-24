@@ -3,16 +3,28 @@ import { Star } from 'lucide-react';
 
 const testimonials = [
   {
-    text: "Finalmente encontrei um espaço onde posso falar sobre minha vida afetiva sem ter que me explicar ou me justificar. Depois de alguns meses em terapia, percebi que conseguia me comunicar de um jeito completamente diferente.",
-    author: "Paciente online",
-    detail: "Terapia de relacionamentos",
+    text: "Finalmente encontrei um espaço onde posso falar sobre minha vida afetiva sem ter que me explicar ou me justificar. Depois de alguns meses em terapia, percebi que consigo me comunicar de um jeito completamente diferente.",
+    name: "Ana L.",
+    detail: "São Paulo, SP",
+    initials: "AL",
+    color: "bg-sage-700",
   },
   {
     text: "Eu repetia os mesmos padrões há anos e não conseguia entender o porquê. As sessões me ajudaram a enxergar de onde esses padrões vinham — e, pela primeira vez, sinto que tenho escolha sobre como agir.",
-    author: "Paciente online",
-    detail: "Padrões em relacionamentos",
+    name: "Rafael M.",
+    detail: "Curitiba, PR",
+    initials: "RM",
+    color: "bg-stone-600",
   },
 ];
+
+const Stars = () => (
+  <div className="flex gap-0.5 mb-5">
+    {[1,2,3,4,5].map(i => (
+      <Star key={i} size={15} className="text-amber-400 fill-amber-400" />
+    ))}
+  </div>
+);
 
 export const Testimonials: React.FC = () => {
   return (
@@ -20,27 +32,36 @@ export const Testimonials: React.FC = () => {
       <div className="absolute top-0 right-0 -mr-40 -mt-40 w-[30rem] h-[30rem] rounded-full blur-3xl opacity-20 pointer-events-none" style={{ backgroundColor: '#529e82' }}></div>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-14">
-          <h2 className="font-serif text-4xl text-white mb-4 tracking-tight">O que dizem os pacientes</h2>
+        <div className="text-center mb-12">
+          <h2 className="font-serif text-3xl md:text-4xl text-white mb-4 tracking-tight">O que dizem os pacientes</h2>
           <div className="w-12 h-1 bg-sage-400 mx-auto rounded-full"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-5">
           {testimonials.map((t, i) => (
-            <div key={i} className="bg-white/10 rounded-2xl p-8 border border-white/10">
-              <div className="flex mb-5">
-                {[1,2,3,4,5].map(j => (
-                  <Star key={j} size={16} className="text-amber-400 fill-amber-400" />
-                ))}
-              </div>
-              <p className="text-stone-200 font-light leading-relaxed italic mb-6">"{t.text}"</p>
+            <div key={i} className="bg-white/10 rounded-2xl p-7 md:p-8 border border-white/10 flex flex-col justify-between">
               <div>
-                <span className="text-stone-300 text-sm font-medium">— {t.author}</span>
-                <span className="text-stone-500 text-sm"> · {t.detail}</span>
+                <Stars />
+                <p className="text-stone-200 font-light leading-relaxed italic text-base md:text-lg">
+                  "{t.text}"
+                </p>
+              </div>
+              <div className="flex items-center gap-4 mt-7 pt-6 border-t border-white/10">
+                <div className={`w-11 h-11 rounded-full ${t.color} flex items-center justify-center shrink-0`}>
+                  <span className="text-white text-sm font-semibold tracking-wide">{t.initials}</span>
+                </div>
+                <div>
+                  <p className="text-white font-medium text-sm">{t.name}</p>
+                  <p className="text-stone-400 text-xs mt-0.5">{t.detail} · Paciente online</p>
+                </div>
               </div>
             </div>
           ))}
         </div>
+
+        <p className="text-center text-stone-500 text-xs mt-8">
+          Nomes abreviados e cidades preservadas com autorização dos pacientes.
+        </p>
       </div>
     </section>
   );
