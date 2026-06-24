@@ -3,14 +3,14 @@ import { Star } from 'lucide-react';
 
 const testimonials = [
   {
-    text: "Finalmente encontrei um espaço onde posso falar sobre minha vida afetiva sem ter que me explicar ou me justificar. Depois de alguns meses em terapia, percebi que consigo me comunicar de um jeito completamente diferente.",
+    text: "Nunca tinha conseguido falar sobre certas coisas sem me sentir julgada. Com o Marcelo foi diferente desde a primeira sessão. Hoje consigo perceber coisas em mim que antes eu simplesmente não via.",
     name: "Ana L.",
     detail: "São Paulo, SP",
     initials: "AL",
     color: "bg-sage-700",
   },
   {
-    text: "Eu repetia os mesmos padrões há anos e não conseguia entender o porquê. As sessões me ajudaram a enxergar de onde esses padrões vinham — e, pela primeira vez, sinto que tenho escolha sobre como agir.",
+    text: "Eu sabia que tinha alguma coisa se repetindo nos meus relacionamentos, mas não conseguia ver o quê. As sessões foram abrindo isso aos poucos. Mudou bastante a forma como eu me relaciono com as pessoas.",
     name: "Rafael M.",
     detail: "Curitiba, PR",
     initials: "RM",
