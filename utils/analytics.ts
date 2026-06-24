@@ -14,7 +14,6 @@ export const trackWhatsAppClick = () => {
   window.gtag('event', 'click_whatsapp', {
     event_category: 'engagement',
     event_label: 'whatsapp_button',
-    value: 160,
   });
 
   // Conversão nativa do Google Ads (ativa quando o ID estiver preenchido)
