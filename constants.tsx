@@ -36,6 +36,6 @@ export const CONTENT = {
   sessionInfo: {
     duration: "50 minutos",
     modality: "Online (Videochamada)",
-    platform: "Google Meet ou WhatsApp Video"
+    platform: "Google Meet"
   }
 };
