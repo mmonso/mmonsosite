@@ -47,7 +47,7 @@ export const Services: React.FC = () => {
             <div className="w-14 h-14 bg-sage-100 border border-sage-200 rounded-xl flex items-center justify-center text-sage-700 mb-6">
               <Clock size={28} strokeWidth={1.5} />
             </div>
-            <h3 className="text-2xl font-serif mb-3 text-stone-900">Duração e valor</h3>
+            <h3 className="text-2xl font-serif mb-3 text-stone-900">Duração</h3>
             <p className="text-stone-600 text-lg leading-relaxed font-light">
               Sessões de <span className="text-stone-900 font-medium">{CONTENT.sessionInfo.duration}</span>, com foco total em você.
             </p>
