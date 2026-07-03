@@ -4,8 +4,8 @@ declare global {
   }
 }
 
-// ID de conversão do Google Ads — substitua pelo seu após criar a conversão no painel
-const GOOGLE_ADS_CONVERSION_ID = ''; // ex: 'AW-XXXXXXXXX/YYYYYYYYYYYYYYY'
+// ID de conversão do Google Ads (ação "Reservar horário")
+const GOOGLE_ADS_CONVERSION_ID = 'AW-18254723187/KtYlCIyE7sccEPPww4BE';
 
 export const trackWhatsAppClick = () => {
   if (typeof window === 'undefined' || !window.gtag) return;
