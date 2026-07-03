@@ -1,6 +1,7 @@
 import React from 'react';
 import { Clock, Video, ShieldCheck } from 'lucide-react';
 import { CONTENT, WHATSAPP_LINK } from '../constants';
+import { trackWhatsAppClick } from '../utils/analytics';
 
 export const Services: React.FC = () => {
   return (
@@ -79,6 +80,7 @@ export const Services: React.FC = () => {
             href={WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={trackWhatsAppClick}
             className="inline-flex items-center justify-center rounded-full font-semibold px-10 py-4 text-lg transition-all duration-300 shadow-lg hover:shadow-xl active:scale-[0.98] text-white"
             style={{ backgroundColor: '#2a3d35' }}
           >
