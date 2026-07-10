@@ -1,5 +1,6 @@
 import React from 'react';
 import { CONTENT, WHATSAPP_LINK } from '../constants';
+import { trackWhatsAppClick } from '../utils/analytics';
 
 export const PrivacyPolicy: React.FC = () => {
   return (
@@ -104,7 +105,7 @@ export const PrivacyPolicy: React.FC = () => {
             </p>
             <ul className="mt-3 space-y-1">
               <li>E-mail: <a href="mailto:contato@marcelomonso.com.br" className="text-sage-600 hover:underline">contato@marcelomonso.com.br</a></li>
-              <li>WhatsApp: <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="text-sage-600 hover:underline">+55 48 99123-4181</a></li>
+              <li>WhatsApp: <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" onClick={trackWhatsAppClick} className="text-sage-600 hover:underline">+55 48 99123-4181</a></li>
             </ul>
           </section>
 
