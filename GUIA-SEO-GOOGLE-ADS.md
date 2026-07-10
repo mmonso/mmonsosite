@@ -166,6 +166,35 @@ Descrição 2: Atendimento ético e acolhedor. CRP 12/27931. Agende via WhatsApp
 
 ---
 
+## 🎯 Rastreamento de Conversão — Estado Atual (implementado)
+
+### Como funciona
+- **Tag base:** `gtag.js` está no `<head>` da `index.html` com `gtag('config', 'G-CRGBSBGV3L')` (GA4) e `gtag('config', 'AW-18254723187')` (Google Ads). O site é uma SPA (todas as rotas servem a mesma `index.html` via rewrite do Vercel), então a tag base cobre todas as páginas.
+- **Snippet de evento:** todo clique em botão/link de WhatsApp chama `trackWhatsAppClick()` (`utils/analytics.ts`), que dispara:
+  1. Evento GA4 `click_whatsapp` (engajamento/relatórios);
+  2. Evento `conversion` do Google Ads com `send_to: 'AW-18254723187/KtYlCIyE7sccEPPww4BE'` (ação **"Reservar horário"**), `value: 160`, `currency: 'BRL'`.
+- **Padrão "medir no clique":** o evento usa `event_callback` + `event_timeout` (2 s), como no snippet oficial do Google. Como os botões abrem o WhatsApp em **nova aba** (`target="_blank"`), a página atual não é descarregada e o hit sempre completa — por isso os handlers não bloqueiam a navegação com `preventDefault`. Se algum link passar a navegar na mesma aba, use o `reportWhatsAppConversion(callback)` exportado no mesmo arquivo.
+- **Onde o send_to é trocado:** constante `GOOGLE_ADS_SEND_TO` em `utils/analytics.ts`. Confira se o rótulo bate com o do painel (Metas → Conversões → "Reservar horário" → Gerenciar → Ver snippet de evento).
+
+### No painel do Google Ads
+- A ação "Reservar horário" deve estar com origem **Site** e método **"usar o snippet de evento"** (não "carregamento de página").
+- O status "problema de configuração" some quando o Google recebe os primeiros eventos `conversion` com o rótulo correto — pode levar até 24–48 h após o deploy e o primeiro tráfego.
+
+### Conversões Otimizadas (Enhanced Conversions) — decisão
+Enhanced Conversions exige enviar dados de primeira parte **do visitante** (e-mail/telefone, hasheados) junto com a conversão. Este site não coleta nenhum dado do visitante antes do clique — o fluxo é direto para o WhatsApp.
+
+- **Decisão atual (opção b):** manter o fluxo direto ao WhatsApp. Enhanced Conversions fica **desativada** para esta ação no painel (Configurações da ação de conversão → desmarcar "Conversões otimizadas"). O aviso "não ativas" é informativo, não um erro — sem dados de primeira parte não há o que enviar, e ativar a flag sem enviar `user_data` só geraria um novo alerta de "dados não recebidos".
+- **Alternativa futura (opção a):** inserir um mini-formulário (nome + telefone ou e-mail) antes do redirect ao WhatsApp e passar o dado via `gtag('set', 'user_data', {...})` antes do evento `conversion`. Ganho: melhor correspondência de conversões (especialmente iOS/ITP) e habilita a meta "lead qualificado". Custo: fricção extra no funil — para um CTA de WhatsApp, cada campo a mais reduz a taxa de clique; só vale testar se a perda de atribuição se mostrar relevante.
+
+### Como validar (Tag Assistant)
+1. Abra https://tagassistant.google.com e conecte ao domínio `marcelomonso.com.br` (ou ao preview do deploy).
+2. Na aba do site aberta pelo Tag Assistant, clique em qualquer botão de WhatsApp (pode fechar a aba do WhatsApp que abrir).
+3. No Tag Assistant, selecione a tag `AW-18254723187` e confira na linha do tempo o evento **conversion** com o rótulo `KtYlCIyE7sccEPPww4BE`.
+4. No DevTools (aba Network, filtro `googleadservices`), o clique deve gerar uma requisição `pagead/conversion/18254723187/…` — e o console não deve mostrar erros.
+5. Em 3–24 h, em Metas → Conversões, a coluna "Status" da ação deve mudar para "Registrando conversões".
+
+---
+
 ## 💰 Estimativas de Custo
 
 ### Google Ads (mensais)
