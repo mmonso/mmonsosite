@@ -29,6 +29,17 @@ function App() {
     const id = decodeURIComponent(window.location.hash.slice(1));
     if (!id) return;
 
+    // O <html> tem `scroll-behavior: smooth` (classe scroll-smooth). Sem forçar
+    // 'instant', qualquer scroll aqui vira animação suave — e o Chrome cancela
+    // essa animação quando fontes/imagens terminam de carregar e deslocam o
+    // layout, deixando a página travada perto do topo (~40px). Por isso o salto
+    // precisa ser SEMPRE instantâneo.
+    const HEADER_OFFSET = 88; // compensa o cabeçalho fixo
+
+    // Impede que a restauração de scroll do navegador brigue com o ajuste.
+    const prevRestoration = 'scrollRestoration' in history ? history.scrollRestoration : undefined;
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+
     let userInteracted = false;
     const markInteraction = () => { userInteracted = true; };
     const interactionEvents = ['wheel', 'touchstart', 'keydown'] as const;
@@ -38,20 +49,25 @@ function App() {
 
     const scrollToSection = () => {
       if (userInteracted) return;
-      document.getElementById(id)?.scrollIntoView({ block: 'start' });
+      const el = document.getElementById(id);
+      if (!el) return;
+      const top = el.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET;
+      window.scrollTo({ top: Math.max(top, 0), behavior: 'instant' as ScrollBehavior });
     };
 
-    // Após o primeiro render as seções já existem no DOM
-    scrollToSection();
-    // Reajusta quando imagens/fontes terminam de carregar e o layout muda
-    window.addEventListener('load', scrollToSection, { once: true });
-    // Fallback caso o evento load já tenha passado ou demore (CDNs lentas)
-    const settleTimer = window.setTimeout(scrollToSection, 1200);
+    // Reajusta várias vezes: o alvo se desloca conforme fontes/imagens carregam
+    // e a altura da página muda. Salto instantâneo a cada passo não pode ser
+    // "cancelado no meio", então cada reajuste apenas corrige a posição final.
+    const rafId = requestAnimationFrame(scrollToSection);
+    const timers = [0, 150, 400, 800, 1500].map((ms) => window.setTimeout(scrollToSection, ms));
+    window.addEventListener('load', scrollToSection);
 
     return () => {
       interactionEvents.forEach((ev) => window.removeEventListener(ev, markInteraction));
       window.removeEventListener('load', scrollToSection);
-      window.clearTimeout(settleTimer);
+      cancelAnimationFrame(rafId);
+      timers.forEach((t) => window.clearTimeout(t));
+      if (prevRestoration && 'scrollRestoration' in history) history.scrollRestoration = prevRestoration;
     };
   }, []);
 
