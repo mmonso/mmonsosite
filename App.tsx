@@ -22,6 +22,39 @@ function App() {
     return null;
   }
 
+  // Rolagem inicial até a seção do hash (ex.: sitelinks /#sobre, /#faq).
+  // O conteúdo é renderizado pelo React, então a rolagem nativa do navegador
+  // acontece antes de as seções existirem no DOM e a página fica no topo.
+  useEffect(() => {
+    const id = decodeURIComponent(window.location.hash.slice(1));
+    if (!id) return;
+
+    let userInteracted = false;
+    const markInteraction = () => { userInteracted = true; };
+    const interactionEvents = ['wheel', 'touchstart', 'keydown'] as const;
+    interactionEvents.forEach((ev) =>
+      window.addEventListener(ev, markInteraction, { passive: true })
+    );
+
+    const scrollToSection = () => {
+      if (userInteracted) return;
+      document.getElementById(id)?.scrollIntoView({ block: 'start' });
+    };
+
+    // Após o primeiro render as seções já existem no DOM
+    scrollToSection();
+    // Reajusta quando imagens/fontes terminam de carregar e o layout muda
+    window.addEventListener('load', scrollToSection, { once: true });
+    // Fallback caso o evento load já tenha passado ou demore (CDNs lentas)
+    const settleTimer = window.setTimeout(scrollToSection, 1200);
+
+    return () => {
+      interactionEvents.forEach((ev) => window.removeEventListener(ev, markInteraction));
+      window.removeEventListener('load', scrollToSection);
+      window.clearTimeout(settleTimer);
+    };
+  }, []);
+
   useEffect(() => {
     const handleAnchorClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
