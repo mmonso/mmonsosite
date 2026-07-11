@@ -28,7 +28,7 @@ const Stars = () => (
 
 export const Testimonials: React.FC = () => {
   return (
-    <section className="py-16 md:py-24 relative overflow-hidden" style={{ backgroundColor: '#2a3d35' }}>
+    <section id="depoimentos" className="py-16 md:py-24 relative overflow-hidden scroll-mt-24" style={{ backgroundColor: '#2a3d35' }}>
       <div className="absolute top-0 right-0 -mr-40 -mt-40 w-[30rem] h-[30rem] rounded-full blur-3xl opacity-20 pointer-events-none" style={{ backgroundColor: '#529e82' }}></div>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

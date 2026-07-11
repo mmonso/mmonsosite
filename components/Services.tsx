@@ -13,7 +13,7 @@ export const Services: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Como funciona */}
-        <div className="text-center mb-16">
+        <div id="como-funciona" className="text-center mb-16 scroll-mt-24">
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mb-6 tracking-tight text-stone-900">Como funciona?</h2>
           <div className="w-20 h-1 bg-sage-400 mx-auto rounded-full mb-8"></div>
           <p className="text-stone-600 max-w-xl mx-auto text-lg font-light">
